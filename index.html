@@ -482,12 +482,12 @@
     </div><!-- Create Tab -->
     <div id="create-tab" class="tab-content">
      <div class="max-w-5xl mx-auto"><!-- API Connection Notice -->
-      <div id="api-notice" class="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
-       <div class="flex items-start gap-3"><span class="text-2xl">⚙️</span>
+      <div id="api-notice" class="mb-6 p-4 bg-green-50 border-l-4 border-green-500 rounded">
+       <div class="flex items-start gap-3"><span class="text-2xl">✅</span>
         <div>
-         <h3 class="font-bold text-yellow-800 mb-1">Configure AI Backend</h3>
-         <p class="text-sm text-yellow-700 mb-2">To use real AI generation, you need to set your backend API URL in the settings panel.</p>
-         <p class="text-xs text-yellow-600">Default: <code class="bg-yellow-100 px-2 py-1 rounded">http://localhost:3000</code> (or your deployed backend URL)</p>
+         <h3 class="font-bold text-green-800 mb-1">Backend Connected!</h3>
+         <p class="text-sm text-green-700 mb-2">Your AI backend is running at: <code class="bg-green-100 px-2 py-1 rounded font-bold">https://social-media-ai-backend.onrender.com</code></p>
+         <p class="text-xs text-green-600">⚡ Note: First request may take 30-60 seconds as the server wakes up (Render free tier).</p>
         </div>
        </div>
       </div>
@@ -841,7 +841,7 @@
         select_platform: "💎 መድረክ ይምረጡ (ገቢ ታይቷል)",
         create_content_title: "🚀 ገቢ የሚያስገኝ ይዘት ይፍጠሩ",
         topic_label: "💡 ርዕስ (ትርፋማ ርዕሶችን ይምረጡ!)",
-        topic_tip: "💰 ምክር፡ የፋይናንስ፣ የንግድ እና የቴክኖሎጂ ርዕሶች 3 እጥፍ ይበልጣሉ!",
+        topic_tip: "💰 ምክር፡ የፋይናንስ፣ የንግድ እና የቴክኖሎጂ ርዕሶች 3 እጥፍ ያበልጣሉ!",
         content_style_label: "🎯 የይዘት ስታይል (ገቢን ይነካል!)",
         tone_professional: "ፕሮፌሽናል",
         tone_viral: "ቫይራል (ከፍተኛ ገቢ)",
@@ -938,7 +938,7 @@
       facebook_handle: 'YourPage',
       linkedin_handle: 'your-name',
       footer_text: 'Built by Creators, For Creators 🇪🇹',
-      api_endpoint: 'http://localhost:3000',
+      api_endpoint: 'https://social-media-ai-backend.onrender.com',
       ai_provider: 'claude'
     };
 
@@ -1101,9 +1101,25 @@
           indicator.className = 'api-status api-connected';
           indicator.textContent = '✅ AI Backend Connected';
           
-          // Hide API notice
+          // Update notice to show success
           const notice = document.getElementById('api-notice');
-          if (notice) notice.style.display = 'none';
+          if (notice) {
+            notice.className = 'mb-6 p-4 bg-green-50 border-l-4 border-green-500 rounded';
+            notice.innerHTML = `
+              <div class="flex items-start gap-3">
+                <span class="text-2xl">✅</span>
+                <div>
+                  <h3 class="font-bold text-green-800 mb-1">Backend Connected!</h3>
+                  <p class="text-sm text-green-700 mb-2">
+                    Your AI backend is running at: <code class="bg-green-100 px-2 py-1 rounded font-bold">${apiUrl}</code>
+                  </p>
+                  <p class="text-xs text-green-600">
+                    ⚡ Note: First request may take 30-60 seconds as the server wakes up (Render free tier).
+                  </p>
+                </div>
+              </div>
+            `;
+          }
         } else {
           throw new Error('Backend not responding');
         }
@@ -1112,9 +1128,27 @@
         indicator.className = 'api-status api-disconnected';
         indicator.textContent = '⚠️ Backend Not Connected';
         
-        // Show API notice
+        // Show warning notice
         const notice = document.getElementById('api-notice');
-        if (notice) notice.style.display = 'block';
+        if (notice) {
+          notice.className = 'mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded';
+          notice.innerHTML = `
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">⚠️</span>
+              <div>
+                <h3 class="font-bold text-yellow-800 mb-1">Backend Connection Error</h3>
+                <p class="text-sm text-yellow-700 mb-2">
+                  Cannot reach backend at: <code class="bg-yellow-100 px-2 py-1 rounded">${apiUrl}</code>
+                </p>
+                <p class="text-xs text-yellow-600">
+                  • Make sure your backend server is running<br>
+                  • Check that the URL is correct in the edit panel<br>
+                  • If using Render, the first request may take 30-60 seconds to wake up
+                </p>
+              </div>
+            </div>
+          `;
+        }
       }
     }
 
@@ -1277,15 +1311,16 @@
 
       } catch (error) {
         console.error('Generation error:', error);
-        showToast(`❌ ${error.message}`, 'error');
+        showToast(`⚠️ ${error.message}`, 'error');
         
         // Show helpful message
         const notice = document.getElementById('api-notice');
         if (notice) {
           notice.style.display = 'block';
+          notice.className = 'mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded';
           notice.innerHTML = `
             <div class="flex items-start gap-3">
-              <span class="text-2xl">⚠️</span>
+              <span class="text-2xl">❌</span>
               <div>
                 <h3 class="font-bold text-red-800 mb-1">Backend Connection Error</h3>
                 <p class="text-sm text-red-700 mb-2">
@@ -1293,6 +1328,9 @@
                 </p>
                 <p class="text-xs text-red-600">
                   Make sure your backend server is running at: <code class="bg-red-100 px-2 py-1 rounded">${(window.elementSdk?.config?.api_endpoint || defaultConfig.api_endpoint)}</code>
+                </p>
+                <p class="text-xs text-red-600 mt-2">
+                  💡 If using Render free tier, the first request after inactivity takes 30-60 seconds to wake up the server.
                 </p>
               </div>
             </div>
@@ -1555,5 +1593,5 @@
 
     document.addEventListener('DOMContentLoaded', init);
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aef1afab3068a61',t:'MTc2NTg5NzgwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aef4539d0ef1b5a',t:'MTc2NTg5OTUzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </html>
