@@ -1,0 +1,32 @@
+{
+  "name": "social-media-ai-frontend",
+  "version": "1.0.0",
+  "description": "Money-Making Social Media AI - Turn Content Into Cash (East Africa Edition)",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "social-media",
+    "ai",
+    "content-generation",
+    "monetization",
+    "ethiopia"
+  ],
+  "author": "NIBRAS AHMED <saba.koof21@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vercel": "^33.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/social-media-ai-frontend.git"
+  }
+}

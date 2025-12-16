@@ -1,0 +1,1559 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💰 Money-Making Social Media AI - Turn Content Into Cash</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .gradient-money {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 50%, #f39c12 100%);
+    }
+
+    .gradient-premium {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .gradient-gold {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .money-badge {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+      animation: pulse-money 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-money {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .btn-money {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      color: white;
+      padding: 0.875rem 2rem;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1.125rem;
+      box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    }
+
+    .btn-money:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(46, 204, 113, 0.5);
+    }
+
+    .btn-money:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-premium {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-premium:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(240, 147, 251, 0.5);
+    }
+
+    .earnings-card {
+      background: linear-gradient(135deg, #2ecc7110 0%, #27ae6010 100%);
+      border: 3px solid #2ecc71;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .earnings-card::before {
+      content: '💰';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 120px;
+      opacity: 0.1;
+    }
+
+    .revenue-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #2ecc71 0%, #f39c12 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .viral-score {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+
+    .viral-high {
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    }
+
+    .viral-medium {
+      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    }
+
+    .viral-good {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+    }
+
+    .platform-btn {
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border: 3px solid #e5e7eb;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .platform-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .platform-btn.active {
+      border-color: #2ecc71;
+      background: linear-gradient(135deg, #2ecc7110 0%, #27ae6010 100%);
+    }
+
+    .tone-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 2px solid #e5e7eb;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.875rem;
+    }
+
+    .tone-btn.active {
+      border-color: #2ecc71;
+      background: #2ecc71;
+      color: white;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 0.875rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.75rem;
+      transition: border-color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #2ecc71;
+      box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+    }
+
+    .generated-content {
+      background: linear-gradient(135deg, #2ecc7110 0%, #27ae6010 100%);
+      border-left: 4px solid #2ecc71;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    .tab {
+      padding: 0.875rem 1.5rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .tab.active {
+      border-bottom-color: #2ecc71;
+      color: #2ecc71;
+    }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      color: white;
+      font-weight: 600;
+      z-index: 2000;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    .toast.success { background: #2ecc71; }
+    .toast.error { background: #ef4444; }
+    .toast.info { background: #3b82f6; }
+
+    .loader {
+      border: 3px solid rgba(46, 204, 113, 0.2);
+      border-top: 3px solid #2ecc71;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .brand-match-bar {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .brand-match-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2ecc71 0%, #f39c12 100%);
+      transition: width 0.5s ease;
+    }
+
+    .affiliate-box {
+      background: linear-gradient(135deg, #3498db10 0%, #2980b910 100%);
+      border: 2px dashed #3498db;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .money-rain {
+      animation: float-money 3s ease-in-out infinite;
+    }
+
+    @keyframes float-money {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      border: 2px solid #e9ecef;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #2ecc71, #f39c12);
+    }
+
+    .earnings-history {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .payment-method {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .payment-method:hover {
+      border-color: #2ecc71;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+    }
+
+    .payment-method.active {
+      border-color: #2ecc71;
+      background: linear-gradient(135deg, #2ecc7110 0%, #27ae6010 100%);
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+      border: 2px solid #2ecc71;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .api-status {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .api-connected {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .api-disconnected {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .api-checking {
+      background: #fff3cd;
+      color: #856404;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full bg-gradient-to-br from-green-50 to-yellow-50">
+  <div class="h-full w-full flex flex-col overflow-auto"><!-- Header -->
+   <header class="gradient-money text-white py-8 shadow-2xl">
+    <div class="container mx-auto px-4"><!-- Language Selector & API Status -->
+     <div class="flex justify-between items-center mb-4">
+      <div id="api-status-indicator" class="api-status api-disconnected">
+       ⚠️ Backend Not Connected
+      </div><select id="language-selector" onchange="changeLanguage()" class="bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold cursor-pointer border-2 border-green-600"> <option value="en">🇬🇧 English</option> <option value="am">🇪🇹 አማርኛ (Amharic)</option> <option value="om">🇪🇹 Afaan Oromoo</option> </select>
+     </div>
+     <div class="flex items-center justify-center space-x-4">
+      <div class="text-5xl money-rain">
+       💰
+      </div>
+      <div class="text-center">
+       <div class="flex items-center justify-center gap-3 mb-2">
+        <h1 id="app-title" class="text-4xl font-black">💰 Money-Making Social Media AI</h1><span class="text-3xl animate-bounce">🇪🇹</span>
+       </div>
+       <p id="app-tagline" class="text-lg text-green-100 font-semibold">Turn Content Into Cash - East Africa Edition</p>
+       <div class="mt-3 flex items-center justify-center gap-3 flex-wrap"><span class="money-badge"> <span class="text-xl">💎</span> <span id="badge-ai">REAL AI POWERED</span> </span> <span class="money-badge"> <span class="text-xl">🚀</span> <span id="badge-premium">PREMIUM EDITION</span> </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header><!-- Main Content -->
+   <main class="flex-1 container mx-auto px-4 py-8"><!-- Tabs -->
+    <div class="flex justify-center space-x-2 md:space-x-4 mb-8 border-b-2 border-gray-200 flex-wrap">
+     <div class="tab active" onclick="showTab('create')" data-lang-key="tab_create">
+      💰 Generate Money
+     </div>
+     <div class="tab" onclick="showTab('guide')" data-lang-key="tab_guide">
+      🚀 Start Earning Guide
+     </div>
+     <div class="tab" onclick="showTab('earnings')" data-lang-key="tab_earnings">
+      📊 Revenue Calculator
+     </div>
+     <div class="tab" onclick="showTab('brand')" data-lang-key="tab_brand">
+      🤝 Brand Deals
+     </div>
+     <div class="tab" onclick="showTab('video')" data-lang-key="tab_video">
+      🎬 Video Scripts
+     </div>
+     <div class="tab" onclick="showTab('saved')" data-lang-key="tab_saved">
+      💾 My Content
+     </div>
+     <div class="tab" onclick="showTab('payments')" data-lang-key="tab_payments">
+      💳 Payment Setup
+     </div>
+     <div class="tab" onclick="showTab('contact')" data-lang-key="tab_contact">
+      📞 Contact
+     </div>
+    </div><!-- Contact Tab -->
+    <div id="contact-tab" class="tab-content" style="display: none;">
+     <div class="max-w-3xl mx-auto">
+      <div class="contact-card">
+       <div class="text-center mb-6">
+        <div class="text-6xl mb-4">
+         👤
+        </div>
+        <h2 class="text-3xl font-black text-gray-800 mb-2" data-lang-key="contact_title">Contact Creator</h2>
+        <p class="text-gray-600" data-lang-key="contact_subtitle">Get in touch with me for collaborations &amp; support</p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-4 rounded-lg border-2 border-green-200">
+         <div class="flex items-center gap-3 mb-2"><span class="text-2xl">👤</span>
+          <div class="font-semibold text-gray-700" data-lang-key="contact_name_label">
+           Name
+          </div>
+         </div>
+         <div class="text-xl font-bold text-gray-800">
+          NIBRAS AHMED
+         </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg border-2 border-green-200">
+         <div class="flex items-center gap-3 mb-2"><span class="text-2xl">📧</span>
+          <div class="font-semibold text-gray-700" data-lang-key="contact_email_label">
+           Email
+          </div>
+         </div><a href="mailto:saba.koof21@gmail.com" class="text-lg font-bold text-green-600 hover:text-green-700"> saba.koof21@gmail.com </a>
+        </div>
+        <div class="bg-white p-4 rounded-lg border-2 border-green-200">
+         <div class="flex items-center gap-3 mb-2"><span class="text-2xl">📱</span>
+          <div class="font-semibold text-gray-700" data-lang-key="contact_phone_label">
+           Phone
+          </div>
+         </div><a href="tel:+251953536342" class="text-lg font-bold text-green-600 hover:text-green-700"> +251 953 536 342 </a>
+        </div>
+        <div class="bg-white p-4 rounded-lg border-2 border-green-200">
+         <div class="flex items-center gap-3 mb-2"><span class="text-2xl">📍</span>
+          <div class="font-semibold text-gray-700" data-lang-key="contact_location_label">
+           Location
+          </div>
+         </div>
+         <div class="text-lg font-bold text-gray-800">
+          Finfinnee, Ethiopia 🇪🇹
+         </div>
+        </div>
+       </div>
+       <div class="mt-6 text-center">
+        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+         <p class="text-gray-700 font-semibold" data-lang-key="contact_message">💬 I'm here to help you monetize your social media and grow your income! Feel free to reach out for questions, collaborations, or support.</p>
+        </div>
+       </div>
+       <div class="mt-6 flex gap-3 flex-wrap justify-center"><a href="mailto:saba.koof21@gmail.com" class="btn-money"> 📧 <span data-lang-key="contact_email_btn">Send Email</span> </a> <a href="tel:+251953536342" class="btn-premium"> 📱 <span data-lang-key="contact_call_btn">Call Now</span> </a>
+       </div>
+      </div>
+     </div>
+    </div><!-- Create Tab -->
+    <div id="create-tab" class="tab-content">
+     <div class="max-w-5xl mx-auto"><!-- API Connection Notice -->
+      <div id="api-notice" class="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+       <div class="flex items-start gap-3"><span class="text-2xl">⚙️</span>
+        <div>
+         <h3 class="font-bold text-yellow-800 mb-1">Configure AI Backend</h3>
+         <p class="text-sm text-yellow-700 mb-2">To use real AI generation, you need to set your backend API URL in the settings panel.</p>
+         <p class="text-xs text-yellow-600">Default: <code class="bg-yellow-100 px-2 py-1 rounded">http://localhost:3000</code> (or your deployed backend URL)</p>
+        </div>
+       </div>
+      </div>
+      <div class="text-center mb-6 p-4 bg-white rounded-lg shadow">
+       <p class="text-lg font-semibold text-gray-800" data-lang-key="welcome_message">Welcome! This tool was created by NIBRAS AHMED to help Ethiopian creators earn from social media 🇪🇹💰</p>
+      </div><!-- Real-Time Earnings Preview -->
+      <div class="earnings-card mb-8">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+         <div class="text-sm text-gray-600 font-semibold mb-1" data-lang-key="potential_earnings">
+          💵 Potential Earnings/Post
+         </div>
+         <div class="revenue-number" id="potential-earnings">
+          $0 - $0
+         </div>
+         <div class="text-xs text-gray-500" id="potential-earnings-local">
+          0 - 0 <span id="currency-display">ETB</span>
+         </div>
+        </div>
+        <div>
+         <div class="text-sm text-gray-600 font-semibold mb-1" data-lang-key="viral_score">
+          🔥 Viral Score
+         </div>
+         <div id="viral-score-display" class="viral-score viral-medium">
+          ⭐ Medium (60%)
+         </div>
+        </div>
+        <div>
+         <div class="text-sm text-gray-600 font-semibold mb-1" data-lang-key="brand_match">
+          🎯 Brand Match
+         </div>
+         <div class="text-2xl font-bold text-gray-800" id="brand-match-score">
+          75%
+         </div>
+         <div class="brand-match-bar">
+          <div class="brand-match-fill" id="brand-match-fill" style="width: 75%"></div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Platform Selection -->
+      <div class="card p-6 mb-6">
+       <h2 class="text-xl font-bold text-gray-800 mb-4" data-lang-key="select_platform">💎 Select Platform (Earnings Shown)</h2>
+       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="platform-btn active" onclick="selectPlatform('instagram')" data-cpm="0.5,3">
+         <div class="text-3xl mb-2">
+          📷
+         </div>
+         <div class="font-semibold text-sm">
+          Instagram
+         </div>
+         <div class="text-xs text-green-600 font-bold mt-1">
+          $0.50-$3/1K views
+         </div>
+        </div>
+        <div class="platform-btn" onclick="selectPlatform('tiktok')" data-cpm="0.02,0.04">
+         <div class="text-3xl mb-2">
+          🎵
+         </div>
+         <div class="font-semibold text-sm">
+          TikTok
+         </div>
+         <div class="text-xs text-green-600 font-bold mt-1">
+          $0.02-$0.04/1K views
+         </div>
+        </div>
+        <div class="platform-btn" onclick="selectPlatform('youtube')" data-cpm="1,3">
+         <div class="text-3xl mb-2">
+          ▶️
+         </div>
+         <div class="font-semibold text-sm">
+          YouTube
+         </div>
+         <div class="text-xs text-green-600 font-bold mt-1">
+          $1-$3/1K views
+         </div>
+        </div>
+        <div class="platform-btn" onclick="selectPlatform('twitter')" data-cpm="0.1,0.5">
+         <div class="text-3xl mb-2">
+          🐦
+         </div>
+         <div class="font-semibold text-sm">
+          Twitter/X
+         </div>
+         <div class="text-xs text-green-600 font-bold mt-1">
+          $0.10-$0.50/1K views
+         </div>
+        </div>
+        <div class="platform-btn" onclick="selectPlatform('linkedin')" data-cpm="2,5">
+         <div class="text-3xl mb-2">
+          💼
+         </div>
+         <div class="font-semibold text-sm">
+          LinkedIn
+         </div>
+         <div class="text-xs text-green-600 font-bold mt-1">
+          $2-$5/1K views
+         </div>
+        </div>
+        <div class="platform-btn" onclick="selectPlatform('facebook')" data-cpm="0.5,2">
+         <div class="text-3xl mb-2">
+          👥
+         </div>
+         <div class="font-semibold text-sm">
+          Facebook
+         </div>
+         <div class="text-xs text-green-600 font-bold mt-1">
+          $0.50-$2/1K views
+         </div>
+        </div>
+       </div>
+      </div><!-- Content Creation Form -->
+      <div class="card p-6 mb-6">
+       <h2 class="text-xl font-bold text-gray-800 mb-4" data-lang-key="create_content_title">🚀 Create Money-Making Content</h2>
+       <form id="content-form" onsubmit="generateContent(event)">
+        <div class="mb-4"><label class="block text-sm font-semibold text-gray-700 mb-2" data-lang-key="topic_label"> 💡 Topic (Choose profitable niches!) </label> <textarea id="topic-input" class="input-field" rows="3" placeholder="E.g., Ethiopian coffee business, Make money online in East Africa, Tech startup tips..." required></textarea>
+         <div class="text-xs text-gray-500 mt-1" data-lang-key="topic_tip">
+          💰 Tip: Finance, business, and tech topics earn 3x more!
+         </div>
+        </div>
+        <div class="mb-4"><label class="block text-sm font-semibold text-gray-700 mb-3" data-lang-key="content_style_label"> 🎯 Content Style (Affects Earnings!) </label>
+         <div class="flex flex-wrap gap-2"><button type="button" class="tone-btn active" onclick="selectTone('professional')" data-viral="60"> 👔 <span data-lang-key="tone_professional">Professional</span> </button> <button type="button" class="tone-btn" onclick="selectTone('viral')" data-viral="95"> 🔥 <span data-lang-key="tone_viral">Viral (Highest $$)</span> </button> <button type="button" class="tone-btn" onclick="selectTone('educational')" data-viral="80"> 📚 <span data-lang-key="tone_educational">Educational ($$$)</span> </button> <button type="button" class="tone-btn" onclick="selectTone('inspirational')" data-viral="75"> ✨ <span data-lang-key="tone_inspirational">Inspirational</span> </button> <button type="button" class="tone-btn" onclick="selectTone('storytelling')" data-viral="85"> 📖 <span data-lang-key="tone_storytelling">Storytelling ($$)</span> </button> <button type="button" class="tone-btn" onclick="selectTone('funny')" data-viral="70"> 😂 <span data-lang-key="tone_funny">Funny</span> </button> <button type="button" class="tone-btn" onclick="selectTone('casual')" data-viral="50"> 😊 <span data-lang-key="tone_casual">Casual</span> </button>
+         </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+         <div><label class="block text-sm font-semibold text-gray-700 mb-2" data-lang-key="audience_size_label"> 👥 Target Audience Size </label> <select id="audience-size" class="input-field" onchange="updateEarnings()"> <option value="1000">1,000 - 5,000 followers</option> <option value="10000">10,000 - 50,000 followers</option> <option value="80000" selected>80,000 - 100,000 followers</option> <option value="100000">100,000 - 500,000 followers</option> <option value="500000">500,000+ followers</option> </select>
+         </div>
+         <div><label class="block text-sm font-semibold text-gray-700 mb-2" data-lang-key="engagement_rate_label"> 📈 Expected Engagement Rate </label> <select id="engagement-rate" class="input-field" onchange="updateEarnings()"> <option value="1">1% - Low</option> <option value="3" selected>3% - Average</option> <option value="5">5% - Good</option> <option value="10">10%+ - Excellent</option> </select>
+         </div>
+        </div>
+        <div class="flex items-center gap-4 mb-4 flex-wrap">
+         <div class="flex items-center"><input type="checkbox" id="include-monetization" class="mr-2 w-5 h-5" checked> <label for="include-monetization" class="text-sm font-semibold text-gray-700" data-lang-key="include_monetization"> 💰 Include Monetization Tips </label>
+         </div>
+         <div class="flex items-center"><input type="checkbox" id="include-affiliate" class="mr-2 w-5 h-5"> <label for="include-affiliate" class="text-sm font-semibold text-gray-700" data-lang-key="include_affiliate"> 🔗 Add Affiliate Link Ideas </label>
+         </div>
+         <div class="flex items-center"><input type="checkbox" id="include-sponsor-pitch" class="mr-2 w-5 h-5"> <label for="include-sponsor-pitch" class="text-sm font-semibold text-gray-700" data-lang-key="include_sponsor_pitch"> 📧 Generate Sponsor Pitch </label>
+         </div>
+        </div><button type="submit" id="generate-btn" class="btn-money w-full" data-lang-key="generate_btn"> 🤖 Generate Money-Making Content with AI </button>
+       </form>
+      </div><!-- Generated Content Display -->
+      <div id="generated-result" class="hidden">
+       <div class="card p-6">
+        <div class="flex justify-between items-center mb-4">
+         <h3 class="text-xl font-bold text-gray-800" data-lang-key="generated_post_title">✨ Your AI-Generated Post</h3><span id="char-count" class="text-sm text-gray-600"></span>
+        </div><!-- Earnings Breakdown -->
+        <div class="earnings-card mb-4">
+         <h4 class="text-lg font-bold text-gray-800 mb-3" data-lang-key="earnings_breakdown">💵 Earnings Breakdown</h4>
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+           <div class="text-xs text-gray-600 mb-1">
+            1K Views
+           </div>
+           <div class="text-xl font-bold text-green-600" id="earn-1k">
+            $0
+           </div>
+           <div class="text-xs text-gray-500" id="earn-1k-local">
+            0 ETB
+           </div>
+          </div>
+          <div>
+           <div class="text-xs text-gray-600 mb-1">
+            10K Views
+           </div>
+           <div class="text-xl font-bold text-green-600" id="earn-10k">
+            $0
+           </div>
+           <div class="text-xs text-gray-500" id="earn-10k-local">
+            0 ETB
+           </div>
+          </div>
+          <div>
+           <div class="text-xs text-gray-600 mb-1">
+            100K Views
+           </div>
+           <div class="text-xl font-bold text-green-600" id="earn-100k">
+            $0
+           </div>
+           <div class="text-xs text-gray-500" id="earn-100k-local">
+            0 ETB
+           </div>
+          </div>
+          <div>
+           <div class="text-xs text-gray-600 mb-1">
+            Brand Deal
+           </div>
+           <div class="text-xl font-bold text-yellow-600" id="earn-brand">
+            $0
+           </div>
+           <div class="text-xs text-gray-500" id="earn-brand-local">
+            0 ETB
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="generated-content">
+         <div id="generated-text" class="text-gray-800 mb-4 whitespace-pre-wrap"></div>
+         <div class="mb-3">
+          <div class="font-semibold text-sm text-gray-700 mb-2">
+           🏷️ Money-Making Hashtags:
+          </div>
+          <div id="generated-hashtags"></div>
+         </div>
+        </div><!-- Affiliate Links Section -->
+        <div id="affiliate-section" class="hidden">
+         <div class="affiliate-box">
+          <h4 class="font-bold text-blue-800 mb-2 flex items-center"><span class="text-xl mr-2">🔗</span> <span data-lang-key="affiliate_title">Affiliate Link Ideas (Add to Bio/Comments)</span></h4>
+          <div id="affiliate-content" class="text-sm text-blue-900"></div>
+         </div>
+        </div><!-- Sponsor Pitch Section -->
+        <div id="sponsor-pitch-section" class="hidden">
+         <div class="bg-purple-50 border-l-4 border-purple-500 p-4 mt-4 rounded">
+          <h4 class="font-bold text-purple-800 mb-2 flex items-center"><span class="text-xl mr-2">📧</span> <span data-lang-key="sponsor_pitch_title">Sponsor Pitch Email Template</span></h4>
+          <div id="sponsor-pitch-content" class="text-sm text-purple-900 whitespace-pre-wrap"></div>
+         </div>
+        </div>
+        <div id="monetization-section" class="hidden"></div>
+        <div class="flex gap-3 mt-4 flex-wrap"><button onclick="copyContent()" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 flex-1" data-lang-key="copy_btn"> 📋 Copy Content </button> <button onclick="savePost()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 flex-1" data-lang-key="save_btn"> 💾 Save Post </button> <button onclick="regenerateContent()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700" data-lang-key="regenerate_btn"> 🔄 Regenerate </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Placeholder for other tabs -->
+    <div id="guide-tab" class="tab-content" style="display: none;">
+     <div class="text-center py-20">
+      <p class="text-gray-600">Guide content here</p>
+     </div>
+    </div>
+    <div id="earnings-tab" class="tab-content" style="display: none;">
+     <div class="text-center py-20">
+      <p class="text-gray-600">Earnings calculator here</p>
+     </div>
+    </div>
+    <div id="brand-tab" class="tab-content" style="display: none;">
+     <div class="text-center py-20">
+      <p class="text-gray-600">Brand deals here</p>
+     </div>
+    </div>
+    <div id="video-tab" class="tab-content" style="display: none;">
+     <div class="text-center py-20">
+      <p class="text-gray-600">Video scripts here</p>
+     </div>
+    </div>
+    <div id="saved-tab" class="tab-content" style="display: none;">
+     <div class="max-w-4xl mx-auto">
+      <div id="saved-posts-list"></div>
+      <div id="no-saved" class="text-center py-20">
+       <div class="text-6xl mb-4">
+        💰
+       </div>
+       <h3 class="text-xl font-bold text-gray-700 mb-2">Start Creating Money-Making Content</h3>
+       <p class="text-gray-500 mb-6">Generate your first AI-powered post and start earning</p><button class="btn-money" onclick="showTab('create')"> Create Your First Post 🚀 </button>
+      </div>
+     </div>
+    </div>
+    <div id="payments-tab" class="tab-content" style="display: none;">
+     <div class="text-center py-20">
+      <p class="text-gray-600">Payment setup here</p>
+     </div>
+    </div>
+   </main><!-- Footer -->
+   <footer class="gradient-money text-white py-6 text-center">
+    <div class="mb-4">
+     <div class="font-bold text-xl mb-2" data-lang-key="footer_creator">
+      Created by NIBRAS AHMED 🇪🇹
+     </div>
+     <div class="flex justify-center gap-4 flex-wrap text-sm"><a href="mailto:saba.koof21@gmail.com" class="hover:text-green-200">📧 saba.koof21@gmail.com</a> <a href="tel:+251953536342" class="hover:text-green-200">📱 +251 953 536 342</a> <span>📍 Finfinnee, Ethiopia</span>
+     </div>
+    </div>
+    <div id="social-links-container" class="mb-4"></div>
+    <p id="footer-text" class="font-semibold" data-lang-key="footer_text">Built by Creators, For Creators 🇪🇹</p>
+    <p class="text-xs text-green-100 mt-1" data-lang-key="footer_subtitle">Turn your content into cash • Start earning today</p>
+   </footer>
+  </div>
+  <script>
+    // Translations Object
+    const translations = {
+      en: {
+        tab_create: "💰 Generate Money",
+        tab_guide: "🚀 Start Earning Guide",
+        tab_earnings: "📊 Revenue Calculator",
+        tab_brand: "🤝 Brand Deals",
+        tab_video: "🎬 Video Scripts",
+        tab_saved: "💾 My Content",
+        tab_payments: "💳 Payment Setup",
+        tab_contact: "📞 Contact",
+        contact_title: "Contact Creator",
+        contact_subtitle: "Get in touch with me for collaborations & support",
+        contact_name_label: "Name",
+        contact_email_label: "Email",
+        contact_phone_label: "Phone",
+        contact_location_label: "Location",
+        contact_message: "💬 I'm here to help you monetize your social media and grow your income! Feel free to reach out for questions, collaborations, or support.",
+        contact_email_btn: "Send Email",
+        contact_call_btn: "Call Now",
+        welcome_message: "Welcome! This tool was created by NIBRAS AHMED to help Ethiopian creators earn from social media 🇪🇹💰",
+        potential_earnings: "💵 Potential Earnings/Post",
+        viral_score: "🔥 Viral Score",
+        brand_match: "🎯 Brand Match",
+        select_platform: "💎 Select Platform (Earnings Shown)",
+        create_content_title: "🚀 Create Money-Making Content",
+        topic_label: "💡 Topic (Choose profitable niches!)",
+        topic_tip: "💰 Tip: Finance, business, and tech topics earn 3x more!",
+        content_style_label: "🎯 Content Style (Affects Earnings!)",
+        tone_professional: "Professional",
+        tone_viral: "Viral (Highest $$)",
+        tone_educational: "Educational ($$$)",
+        tone_inspirational: "Inspirational",
+        tone_storytelling: "Storytelling ($$)",
+        tone_funny: "Funny",
+        tone_casual: "Casual",
+        audience_size_label: "👥 Target Audience Size",
+        engagement_rate_label: "📈 Expected Engagement Rate",
+        include_monetization: "💰 Include Monetization Tips",
+        include_affiliate: "🔗 Add Affiliate Link Ideas",
+        include_sponsor_pitch: "📧 Generate Sponsor Pitch",
+        generate_btn: "🤖 Generate Money-Making Content with AI",
+        generated_post_title: "✨ Your AI-Generated Post",
+        earnings_breakdown: "💵 Earnings Breakdown",
+        affiliate_title: "Affiliate Link Ideas (Add to Bio/Comments)",
+        sponsor_pitch_title: "Sponsor Pitch Email Template",
+        copy_btn: "📋 Copy Content",
+        save_btn: "💾 Save Post",
+        regenerate_btn: "🔄 Regenerate",
+        footer_creator: "Created by NIBRAS AHMED 🇪🇹",
+        footer_text: "Built by Creators, For Creators 🇪🇹",
+        footer_subtitle: "Turn your content into cash • Start earning today",
+        badge_ai: "REAL AI POWERED",
+        badge_premium: "PREMIUM EDITION"
+      },
+      am: {
+        tab_create: "💰 ገቢ አስገኝ",
+        tab_guide: "🚀 የገቢ መመሪያ",
+        tab_earnings: "📊 ገቢ ስሌት",
+        tab_brand: "🤝 ከብራንድ ጋር",
+        tab_video: "🎬 ቪዲዮ ስክሪፕት",
+        tab_saved: "💾 የኔ ይዘት",
+        tab_payments: "💳 ክፍያ",
+        tab_contact: "📞 አድራሻ",
+        contact_title: "አቅራቢ ያግኙ",
+        contact_subtitle: "ለትብብር እና ድጋፍ ያግኙኝ",
+        contact_name_label: "ስም",
+        contact_email_label: "ኢሜይል",
+        contact_phone_label: "ስልክ",
+        contact_location_label: "አድራሻ",
+        contact_message: "💬 ማህበራዊ ሚዲያዎን ገንዘብ እንዲያስገኙ እና ገቢዎን እንዲያሳድጉ ለመርዳት እዚህ ነኝ! ለጥያቄዎች፣ ትብብር ወይም ድጋፍ ያግኙኝ።",
+        contact_email_btn: "ኢሜይል ላክ",
+        contact_call_btn: "አሁን ደውል",
+        welcome_message: "እንኳን በደህና መጡ! ይህ መሳሪያ የተፈጠረው በ NIBRAS AHMED ኢትዮጵያዊ ፈጣሪዎች ከማህበራዊ ሚዲያ እንዲያገኙ ለመርዳት ነው 🇪🇹💰",
+        potential_earnings: "💵 የሚጠበቅ ገቢ/ፖስት",
+        viral_score: "🔥 ቫይራል ነጥብ",
+        brand_match: "🎯 የብራንድ ተዛማጅነት",
+        select_platform: "💎 መድረክ ይምረጡ (ገቢ ታይቷል)",
+        create_content_title: "🚀 ገቢ የሚያስገኝ ይዘት ይፍጠሩ",
+        topic_label: "💡 ርዕስ (ትርፋማ ርዕሶችን ይምረጡ!)",
+        topic_tip: "💰 ምክር፡ የፋይናንስ፣ የንግድ እና የቴክኖሎጂ ርዕሶች 3 እጥፍ ይበልጣሉ!",
+        content_style_label: "🎯 የይዘት ስታይል (ገቢን ይነካል!)",
+        tone_professional: "ፕሮፌሽናል",
+        tone_viral: "ቫይራል (ከፍተኛ ገቢ)",
+        tone_educational: "ትምህርታዊ (ከፍተኛ)",
+        tone_inspirational: "አበረታች",
+        tone_storytelling: "ታሪክ ነገር",
+        tone_funny: "አስቂኝ",
+        tone_casual: "ተራ",
+        audience_size_label: "👥 የታዳሚ መጠን",
+        engagement_rate_label: "📈 የተሳትፎ መጠን",
+        include_monetization: "💰 የገቢ ምክሮች አካትት",
+        include_affiliate: "🔗 አፊሊየት ሊንክ ጨምር",
+        include_sponsor_pitch: "📧 ስፖንሰር ፒች አዘጋጅ",
+        generate_btn: "🤖 በ AI ገቢ የሚያስገኝ ይዘት አዘጋጅ",
+        generated_post_title: "✨ በ AI የተፈጠረ ፖስት",
+        earnings_breakdown: "💵 የገቢ ክፍፍል",
+        affiliate_title: "አፊሊየት ሊንክ ሀሳቦች (በባዮ/አስተያየት)",
+        sponsor_pitch_title: "ስፖንሰር ፒች ኢሜይል",
+        copy_btn: "📋 ይዘት ቅዳ",
+        save_btn: "💾 ፖስት አስቀምጥ",
+        regenerate_btn: "🔄 እንደገና አዘጋጅ",
+        footer_creator: "የተፈጠረው በ NIBRAS AHMED 🇪🇹",
+        footer_text: "በፈጣሪዎች፣ ለፈጣሪዎች የተሰራ 🇪🇹",
+        footer_subtitle: "ይዘትዎን ወደ ገንዘብ ይለውጡ • ዛሬ መግዛት ይጀምሩ",
+        badge_ai: "እውነተኛ AI",
+        badge_premium: "ፕሪሚየም እትም"
+      },
+      om: {
+        tab_create: "💰 Galii Argadhu",
+        tab_guide: "🚀 Qajeelfama Galii",
+        tab_earnings: "📊 Galii Shallaguu",
+        tab_brand: "🤝 Walta'iinsa Brand",
+        tab_video: "🎬 Viidiyoo Script",
+        tab_saved: "💾 Qabiyyee Koo",
+        tab_payments: "💳 Kaffaltii",
+        tab_contact: "📞 Teessoo",
+        contact_title: "Uumaa Argadhu",
+        contact_subtitle: "Walta'iinsaa fi deeggarsa argachuuf na quunnamaa",
+        contact_name_label: "Maqaa",
+        contact_email_label: "Imeelii",
+        contact_phone_label: "Bilbila",
+        contact_location_label: "Teessoo",
+        contact_message: "💬 Miidiyaa hawaasummaa keessan irraa galii akka argattan fi galii keessan guddisuuf isin gargaaruuf as jira! Gaaffii, walta'iinsa ykn deeggarsa barbaachisuuf na quunnamaa.",
+        contact_email_btn: "Imeelii Ergaa",
+        contact_call_btn: "Amma Bilbilaa",
+        welcome_message: "Baga nagaan dhuftan! Meeshaan kun uumaa Itiyoophiyaa miidiyaa hawaasummaa irraa galii akka argatan gargaaruuf NIBRAS AHMED'n hundeeffame 🇪🇹💰",
+        potential_earnings: "💵 Galii Eegamu/Poostii",
+        viral_score: "🔥 Qabxii Vaayiralii",
+        brand_match: "🎯 Walsimannaa Brand",
+        select_platform: "💎 Waltajjii Filadhu (Galii Agarsiifame)",
+        create_content_title: "🚀 Qabiyyee Galii Fidu Uumuu",
+        topic_label: "💡 Mata-duree (Mata-duree bu'aa qabu filadhu!)",
+        topic_tip: "💰 Gorsa: Maallaqaa, daldala fi teeknoloojii mata-dureen 3 dachaa caalu!",
+        content_style_label: "🎯 Akkaataa Qabiyyee (Galii irratti dhiibbaa qaba!)",
+        tone_professional: "Ogummaa",
+        tone_viral: "Vaayiralii (Galii Olaanaa)",
+        tone_educational: "Barnoota",
+        tone_inspirational: "Kakaasaa",
+        tone_storytelling: "Seenaa Himuu",
+        tone_funny: "Qoosaa",
+        tone_casual: "Salphaa",
+        audience_size_label: "👥 Guddina Dhaggeeffattootaa",
+        engagement_rate_label: "📈 Safara Hirmaannaa",
+        include_monetization: "💰 Gorsa Galii Dabalataa",
+        include_affiliate: "🔗 Yaada Linkii Afiiliyeeti",
+        include_sponsor_pitch: "📧 Piichii Ispoonsarii Qopheessuu",
+        generate_btn: "🤖 AI'n Qabiyyee Galii Fidu Qopheessuu",
+        generated_post_title: "✨ AI'n Uumame Poostii",
+        earnings_breakdown: "💵 Qoodama Galii",
+        affiliate_title: "Yaada Linkii Afiiliyeeti (Baayoo/Yaada keessatti)",
+        sponsor_pitch_title: "Teempleetii Imeelii Piichii",
+        copy_btn: "📋 Qabiyyee Garagalchuu",
+        save_btn: "💾 Poostii Kuusuu",
+        regenerate_btn: "🔄 Irra Deebi'ii Qopheessuu",
+        footer_creator: "Kan Uumame NIBRAS AHMED'n 🇪🇹",
+        footer_text: "Uumtootaan, Uumtootaaf Ijaarame 🇪🇹",
+        footer_subtitle: "Qabiyyee keessan gara maallaqaatti jijjiiraa",
+        badge_ai: "AI DHUGAA",
+        badge_premium: "Edition Piriimiyeemii"
+      }
+    };
+
+    let currentLanguage = 'en';
+
+    const defaultConfig = {
+      app_title: '💰 Money-Making Social Media AI',
+      app_tagline: 'Turn Content Into Cash - East Africa Edition',
+      brand_name: 'NIBRAS AHMED',
+      currency_label: 'ETB',
+      instagram_handle: '@yourhandle',
+      tiktok_handle: '@yourhandle',
+      youtube_handle: '@yourchannel',
+      twitter_handle: '@yourhandle',
+      facebook_handle: 'YourPage',
+      linkedin_handle: 'your-name',
+      footer_text: 'Built by Creators, For Creators 🇪🇹',
+      api_endpoint: 'http://localhost:3000',
+      ai_provider: 'claude'
+    };
+
+    const ETB_RATE = 50;
+
+    let savedPosts = [];
+    let selectedPlatform = 'instagram';
+    let selectedTone = 'professional';
+    let currentGenerated = null;
+    let apiConnected = false;
+
+    const platformCPM = {
+      instagram: { min: 0.5, max: 3 },
+      tiktok: { min: 0.02, max: 0.04 },
+      youtube: { min: 1, max: 3 },
+      twitter: { min: 0.1, max: 0.5 },
+      linkedin: { min: 2, max: 5 },
+      facebook: { min: 0.5, max: 2 }
+    };
+
+    const viralScores = {
+      professional: 60,
+      casual: 50,
+      funny: 70,
+      inspirational: 75,
+      educational: 80,
+      viral: 95,
+      storytelling: 85
+    };
+
+    // Language Change Function
+    function changeLanguage() {
+      const selector = document.getElementById('language-selector');
+      currentLanguage = selector.value;
+      
+      const lang = translations[currentLanguage];
+      
+      document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (lang[key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = lang[key];
+          } else {
+            element.textContent = lang[key];
+          }
+        }
+      });
+    }
+
+    // Data SDK Handler
+    const dataHandler = {
+      onDataChanged(data) {
+        savedPosts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        renderSavedPosts();
+      }
+    };
+
+    // Element SDK Implementation
+    async function onConfigChange(config) {
+      document.getElementById('app-title').textContent = config.app_title || defaultConfig.app_title;
+      document.getElementById('app-tagline').textContent = config.app_tagline || defaultConfig.app_tagline;
+      document.getElementById('footer-text').textContent = translations[currentLanguage].footer_text;
+      
+      const currencyLabel = config.currency_label || defaultConfig.currency_label;
+      document.querySelectorAll('#currency-display').forEach(el => {
+        el.textContent = currencyLabel;
+      });
+
+      renderSocialLinks(config);
+      
+      // Check API connection when config changes
+      if (config.api_endpoint && config.api_endpoint !== defaultConfig.api_endpoint) {
+        checkAPIConnection();
+      }
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['api_endpoint', config.api_endpoint || defaultConfig.api_endpoint],
+        ['ai_provider', config.ai_provider || defaultConfig.ai_provider],
+        ['app_title', config.app_title || defaultConfig.app_title],
+        ['app_tagline', config.app_tagline || defaultConfig.app_tagline],
+        ['brand_name', config.brand_name || defaultConfig.brand_name],
+        ['instagram_handle', config.instagram_handle || defaultConfig.instagram_handle],
+        ['tiktok_handle', config.tiktok_handle || defaultConfig.tiktok_handle],
+        ['youtube_handle', config.youtube_handle || defaultConfig.youtube_handle],
+        ['twitter_handle', config.twitter_handle || defaultConfig.twitter_handle],
+        ['footer_text', config.footer_text || defaultConfig.footer_text]
+      ]);
+    }
+
+    function renderSocialLinks(config) {
+      const container = document.getElementById('social-links-container');
+      if (!container) return;
+
+      const socialLinks = [
+        { icon: '📷', name: 'Instagram', handle: config.instagram_handle || defaultConfig.instagram_handle, url: 'https://instagram.com/' },
+        { icon: '🎵', name: 'TikTok', handle: config.tiktok_handle || defaultConfig.tiktok_handle, url: 'https://tiktok.com/' },
+        { icon: '▶️', name: 'YouTube', handle: config.youtube_handle || defaultConfig.youtube_handle, url: 'https://youtube.com/' },
+        { icon: '🐦', name: 'Twitter', handle: config.twitter_handle || defaultConfig.twitter_handle, url: 'https://twitter.com/' }
+      ];
+
+      const validLinks = socialLinks.filter(link => 
+        link.handle && 
+        link.handle !== defaultConfig[link.name.toLowerCase() + '_handle'] && 
+        !link.handle.includes('yourhandle') && 
+        !link.handle.includes('yourchannel')
+      );
+
+      if (validLinks.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="flex justify-center items-center gap-4 flex-wrap">
+          <span class="text-green-100 font-semibold">Follow me:</span>
+          ${validLinks.map(link => {
+            const cleanHandle = link.handle.replace('@', '');
+            const fullUrl = link.url + cleanHandle;
+            return `
+              <a href="${fullUrl}" target="_blank" rel="noopener noreferrer" 
+                 class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-full transition-all flex items-center gap-2 text-white font-semibold">
+                <span class="text-xl">${link.icon}</span>
+                <span class="text-sm">${link.handle}</span>
+              </a>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    // Check API Connection
+    async function checkAPIConnection() {
+      const indicator = document.getElementById('api-status-indicator');
+      const config = window.elementSdk?.config || defaultConfig;
+      const apiUrl = config.api_endpoint || defaultConfig.api_endpoint;
+      
+      indicator.className = 'api-status api-checking';
+      indicator.textContent = '🔄 Checking Backend...';
+      
+      try {
+        const response = await fetch(`${apiUrl}/health`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          apiConnected = true;
+          indicator.className = 'api-status api-connected';
+          indicator.textContent = '✅ AI Backend Connected';
+          
+          // Hide API notice
+          const notice = document.getElementById('api-notice');
+          if (notice) notice.style.display = 'none';
+        } else {
+          throw new Error('Backend not responding');
+        }
+      } catch (error) {
+        apiConnected = false;
+        indicator.className = 'api-status api-disconnected';
+        indicator.textContent = '⚠️ Backend Not Connected';
+        
+        // Show API notice
+        const notice = document.getElementById('api-notice');
+        if (notice) notice.style.display = 'block';
+      }
+    }
+
+    async function init() {
+      try {
+        if (window.elementSdk) {
+          await window.elementSdk.init({
+            defaultConfig,
+            onConfigChange,
+            mapToCapabilities,
+            mapToEditPanelValues
+          });
+        }
+
+        if (window.dataSdk) {
+          const result = await window.dataSdk.init(dataHandler);
+          if (!result.isOk) {
+            showToast('Failed to initialize storage', 'error');
+          }
+        }
+
+        updateEarnings();
+        renderSocialLinks(defaultConfig);
+        changeLanguage();
+        
+        // Check API connection on load
+        setTimeout(checkAPIConnection, 1000);
+      } catch (error) {
+        showToast('Initialization failed', 'error');
+      }
+    }
+
+    function showTab(tabName) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+      
+      event.target.classList.add('active');
+      document.getElementById(`${tabName}-tab`).style.display = 'block';
+    }
+
+    function selectPlatform(platform) {
+      selectedPlatform = platform;
+      document.querySelectorAll('.platform-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.closest('.platform-btn').classList.add('active');
+      updateEarnings();
+    }
+
+    function selectTone(tone) {
+      selectedTone = tone;
+      document.querySelectorAll('.tone-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      updateEarnings();
+    }
+
+    function updateEarnings() {
+      const audienceSize = parseInt(document.getElementById('audience-size')?.value || 80000);
+      const engagementRate = parseFloat(document.getElementById('engagement-rate')?.value || 3);
+      
+      const estimatedViews = audienceSize * (engagementRate / 100);
+      const cpm = platformCPM[selectedPlatform];
+      
+      const minEarn = ((estimatedViews / 1000) * cpm.min).toFixed(2);
+      const maxEarn = ((estimatedViews / 1000) * cpm.max).toFixed(2);
+      
+      document.getElementById('potential-earnings').textContent = `$${minEarn} - $${maxEarn}`;
+      document.getElementById('potential-earnings-local').innerHTML = `${(minEarn * ETB_RATE).toFixed(0)} - ${(maxEarn * ETB_RATE).toFixed(0)} <span id="currency-display">${defaultConfig.currency_label}</span>`;
+      
+      const viralScore = viralScores[selectedTone];
+      const scoreClass = viralScore >= 80 ? 'viral-high' : viralScore >= 65 ? 'viral-medium' : 'viral-good';
+      const scoreEmoji = viralScore >= 80 ? '🔥' : viralScore >= 65 ? '⭐' : '✓';
+      document.getElementById('viral-score-display').className = `viral-score ${scoreClass}`;
+      document.getElementById('viral-score-display').textContent = `${scoreEmoji} ${viralScore}% Viral Potential`;
+      
+      const brandMatch = Math.min(95, 50 + (audienceSize / 10000) * 5 + viralScore / 5);
+      document.getElementById('brand-match-score').textContent = `${brandMatch.toFixed(0)}%`;
+      document.getElementById('brand-match-fill').style.width = `${brandMatch}%`;
+    }
+
+    // REAL AI GENERATION FUNCTION
+    async function generateContent(event) {
+      event.preventDefault();
+
+      const btn = document.getElementById('generate-btn');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<div class="loader"></div>Generating with AI...';
+
+      const topic = document.getElementById('topic-input').value.trim();
+      const includeMonetization = document.getElementById('include-monetization').checked;
+      const includeAffiliate = document.getElementById('include-affiliate').checked;
+      const includeSponsorPitch = document.getElementById('include-sponsor-pitch').checked;
+      const audienceSize = document.getElementById('audience-size').value;
+      const engagementRate = document.getElementById('engagement-rate').value;
+
+      try {
+        // Get API endpoint from config
+        const config = window.elementSdk?.config || defaultConfig;
+        const apiUrl = config.api_endpoint || defaultConfig.api_endpoint;
+        const provider = config.ai_provider || defaultConfig.ai_provider;
+
+        // Call backend AI API
+        const response = await fetch(`${apiUrl}/api/generate-content`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            topic,
+            platform: selectedPlatform,
+            tone: selectedTone,
+            audienceSize,
+            engagementRate,
+            includeMonetization,
+            includeAffiliate,
+            includeSponsorPitch,
+            provider
+          })
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to generate content');
+        }
+
+        const result = await response.json();
+        
+        if (!result.success) {
+          throw new Error(result.error || 'Generation failed');
+        }
+
+        // Extract AI-generated content
+        const aiData = result.data;
+        const content = aiData.content;
+        const hashtags = aiData.hashtags || [];
+        const monetizationTip = aiData.monetizationTip;
+        const affiliateLinks = aiData.affiliateLinks;
+        const sponsorPitch = aiData.sponsorPitch;
+        
+        const earnings = calculateEarnings(audienceSize, engagementRate);
+
+        currentGenerated = {
+          content,
+          hashtags,
+          platform: selectedPlatform,
+          tone: selectedTone,
+          monetizationTip,
+          affiliateLinks,
+          sponsorPitch,
+          estimatedEarnings: `$${earnings.min}-${earnings.max}`,
+          brandMatchScore: Math.floor(50 + Math.random() * 40),
+          viralPotential: viralScores[selectedTone] + '%',
+          bestPostTime: '6-9 PM EAT',
+          audienceSize,
+          engagementRate
+        };
+
+        displayGeneratedContent(content, hashtags, monetizationTip, affiliateLinks, sponsorPitch, earnings);
+        
+        showToast('✅ AI Content Generated!', 'success');
+
+      } catch (error) {
+        console.error('Generation error:', error);
+        showToast(`❌ ${error.message}`, 'error');
+        
+        // Show helpful message
+        const notice = document.getElementById('api-notice');
+        if (notice) {
+          notice.style.display = 'block';
+          notice.innerHTML = `
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">⚠️</span>
+              <div>
+                <h3 class="font-bold text-red-800 mb-1">Backend Connection Error</h3>
+                <p class="text-sm text-red-700 mb-2">
+                  ${error.message}
+                </p>
+                <p class="text-xs text-red-600">
+                  Make sure your backend server is running at: <code class="bg-red-100 px-2 py-1 rounded">${(window.elementSdk?.config?.api_endpoint || defaultConfig.api_endpoint)}</code>
+                </p>
+              </div>
+            </div>
+          `;
+        }
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    function calculateEarnings(audienceSize, engagementRate) {
+      const views = audienceSize * (engagementRate / 100);
+      const cpm = platformCPM[selectedPlatform];
+      
+      const brandDealMultiplier = audienceSize > 100000 ? 5 : audienceSize > 50000 ? 3 : audienceSize > 10000 ? 2 : 1;
+      
+      return {
+        views,
+        earn1k: {
+          usd: ((1000 / 1000) * ((cpm.min + cpm.max) / 2)).toFixed(2),
+          local: (((1000 / 1000) * ((cpm.min + cpm.max) / 2)) * ETB_RATE).toFixed(0)
+        },
+        earn10k: {
+          usd: ((10000 / 1000) * ((cpm.min + cpm.max) / 2)).toFixed(2),
+          local: (((10000 / 1000) * ((cpm.min + cpm.max) / 2)) * ETB_RATE).toFixed(0)
+        },
+        earn100k: {
+          usd: ((100000 / 1000) * ((cpm.min + cpm.max) / 2)).toFixed(2),
+          local: (((100000 / 1000) * ((cpm.min + cpm.max) / 2)) * ETB_RATE).toFixed(0)
+        },
+        brandDeal: {
+          usd: (50 * brandDealMultiplier).toFixed(0),
+          local: (50 * brandDealMultiplier * ETB_RATE).toFixed(0)
+        },
+        min: ((views / 1000) * cpm.min).toFixed(2),
+        max: ((views / 1000) * cpm.max).toFixed(2)
+      };
+    }
+
+    function displayGeneratedContent(content, hashtags, monetizationTip, affiliateLinks, sponsorPitch, earnings) {
+      document.getElementById('generated-text').textContent = content;
+      document.getElementById('generated-hashtags').innerHTML = hashtags.map(tag => 
+        `<span class="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm mr-2 mb-2">${tag}</span>`
+      ).join('');
+      
+      document.getElementById('char-count').textContent = `${content.length} characters`;
+      
+      document.getElementById('earn-1k').textContent = `$${earnings.earn1k.usd}`;
+      document.getElementById('earn-1k-local').textContent = `${earnings.earn1k.local} ETB`;
+      document.getElementById('earn-10k').textContent = `$${earnings.earn10k.usd}`;
+      document.getElementById('earn-10k-local').textContent = `${earnings.earn10k.local} ETB`;
+      document.getElementById('earn-100k').textContent = `$${earnings.earn100k.usd}`;
+      document.getElementById('earn-100k-local').textContent = `${earnings.earn100k.local} ETB`;
+      document.getElementById('earn-brand').textContent = `$${earnings.brandDeal.usd}`;
+      document.getElementById('earn-brand-local').textContent = `${earnings.brandDeal.local} ETB`;
+      
+      const monetizationSection = document.getElementById('monetization-section');
+      if (monetizationTip) {
+        monetizationSection.innerHTML = `
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-4 rounded">
+            <h4 class="font-bold text-yellow-800 mb-2 flex items-center">
+              <span class="text-xl mr-2">💰</span>
+              How to Monetize This Content
+            </h4>
+            <pre class="text-sm text-yellow-900 whitespace-pre-wrap">${monetizationTip}</pre>
+          </div>
+        `;
+        monetizationSection.classList.remove('hidden');
+      } else {
+        monetizationSection.classList.add('hidden');
+      }
+
+      const affiliateSection = document.getElementById('affiliate-section');
+      if (affiliateLinks) {
+        document.getElementById('affiliate-content').innerHTML = `<pre class="whitespace-pre-wrap">${affiliateLinks}</pre>`;
+        affiliateSection.classList.remove('hidden');
+      } else {
+        affiliateSection.classList.add('hidden');
+      }
+
+      const sponsorPitchSection = document.getElementById('sponsor-pitch-section');
+      if (sponsorPitch) {
+        document.getElementById('sponsor-pitch-content').textContent = sponsorPitch;
+        sponsorPitchSection.classList.remove('hidden');
+      } else {
+        sponsorPitchSection.classList.add('hidden');
+      }
+
+      document.getElementById('generated-result').classList.remove('hidden');
+      document.getElementById('generated-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function copyContent() {
+      if (!currentGenerated) return;
+
+      let fullContent = currentGenerated.content + '\n\n' + currentGenerated.hashtags.join(' ');
+      
+      if (currentGenerated.affiliateLinks) {
+        fullContent += '\n\n' + currentGenerated.affiliateLinks;
+      }
+
+      navigator.clipboard.writeText(fullContent).then(() => {
+        showToast('💰 Content copied!', 'success');
+      }).catch(() => {
+        showToast('Failed to copy content', 'error');
+      });
+    }
+
+    async function savePost() {
+      if (!currentGenerated) return;
+
+      if (savedPosts.length >= 999) {
+        showToast('Maximum limit of 999 posts reached', 'error');
+        return;
+      }
+
+      try {
+        const result = await window.dataSdk.create({
+          id: `post-${Date.now()}`,
+          date: new Date().toISOString(),
+          platform: currentGenerated.platform,
+          content: currentGenerated.content,
+          hashtags: currentGenerated.hashtags.join(' '),
+          tone: currentGenerated.tone,
+          type: 'post',
+          saved: true,
+          monetizationTip: currentGenerated.monetizationTip || '',
+          duration: '',
+          estimatedEarnings: currentGenerated.estimatedEarnings,
+          brandMatchScore: currentGenerated.brandMatchScore,
+          viralPotential: currentGenerated.viralPotential,
+          bestPostTime: currentGenerated.bestPostTime,
+          audienceSize: currentGenerated.audienceSize,
+          engagementRate: currentGenerated.engagementRate,
+          affiliateLinks: currentGenerated.affiliateLinks || '',
+          sponsorPitch: currentGenerated.sponsorPitch || ''
+        });
+
+        if (result.isOk) {
+          showToast('💾 Post saved!', 'success');
+        } else {
+          throw new Error('Failed to save');
+        }
+      } catch (error) {
+        showToast('Failed to save post', 'error');
+      }
+    }
+
+    function regenerateContent() {
+      document.getElementById('generate-btn').click();
+    }
+
+    function renderSavedPosts() {
+      const container = document.getElementById('saved-posts-list');
+      const noSaved = document.getElementById('no-saved');
+
+      if (savedPosts.length === 0) {
+        container.innerHTML = '';
+        noSaved.style.display = 'block';
+        return;
+      }
+
+      noSaved.style.display = 'none';
+      container.innerHTML = savedPosts.map(post => {
+        const platformIcon = { instagram: '📷', tiktok: '🎵', youtube: '▶️', twitter: '🐦', linkedin: '💼', facebook: '👥' }[post.platform] || '📱';
+        
+        return `
+          <div class="card p-5 mb-4">
+            <div class="flex justify-between items-start mb-3">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl">${platformIcon}</span>
+                <div>
+                  <div class="font-bold text-gray-800 capitalize">${post.platform}</div>
+                  <div class="text-xs text-gray-500">${new Date(post.date).toLocaleDateString()}</div>
+                  <div class="text-sm text-green-600 font-semibold mt-1">💰 ${post.estimatedEarnings || 'N/A'}</div>
+                </div>
+              </div>
+              <button onclick="deletePost('${post.__backendId}')" class="text-red-600 hover:text-red-800 text-xl">🗑️</button>
+            </div>
+            <p class="text-gray-700 mb-3 whitespace-pre-wrap">${post.content.substring(0, 200)}${post.content.length > 200 ? '...' : ''}</p>
+            <div class="flex gap-2">
+              <button onclick="copyPostContent('${post.__backendId}')" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm flex-1">
+                📋 Copy
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function copyPostContent(backendId) {
+      const post = savedPosts.find(p => p.__backendId === backendId);
+      if (!post) return;
+
+      const fullContent = post.content + '\n\n' + post.hashtags;
+      navigator.clipboard.writeText(fullContent).then(() => {
+        showToast('📋 Copied!', 'success');
+      }).catch(() => {
+        showToast('Failed to copy', 'error');
+      });
+    }
+
+    async function deletePost(backendId) {
+      const post = savedPosts.find(p => p.__backendId === backendId);
+      if (!post) return;
+
+      // Inline confirmation instead of window.confirm()
+      const container = event.target.closest('.card');
+      const originalHTML = container.innerHTML;
+      
+      container.innerHTML = `
+        <div class="p-5 text-center">
+          <p class="text-lg font-bold text-gray-800 mb-4">Delete this post?</p>
+          <div class="flex gap-3 justify-center">
+            <button onclick="confirmDelete('${backendId}')" class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">
+              Yes, Delete
+            </button>
+            <button onclick="cancelDelete('${backendId}', \`${originalHTML.replace(/`/g, '\\`')}\`)" class="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700">
+              Cancel
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function confirmDelete(backendId) {
+      const post = savedPosts.find(p => p.__backendId === backendId);
+      if (!post) return;
+
+      try {
+        const result = await window.dataSdk.delete(post);
+        if (result.isOk) {
+          showToast('🗑️ Deleted!', 'success');
+        } else {
+          throw new Error('Failed to delete');
+        }
+      } catch (error) {
+        showToast('Failed to delete', 'error');
+        renderSavedPosts(); // Refresh to show original state
+      }
+    }
+
+    function cancelDelete(backendId, originalHTML) {
+      renderSavedPosts(); // Just re-render to restore original state
+    }
+
+    function showToast(message, type = 'info') {
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => toast.classList.add('show'), 100);
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aef1afab3068a61',t:'MTc2NTg5NzgwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
